@@ -1,22 +1,44 @@
-import type { Config } from "tailwindcss";
+import type { Config } from 'tailwindcss'
+import typography from '@tailwindcss/typography'
 
 export default {
-  content: ["./app/**/{**,.client,.server}/**/*.{js,jsx,ts,tsx}"],
+  content: [
+    "./app/**/*.{js,jsx,ts,tsx}",
+  ],
+  darkMode: 'class',
   theme: {
     extend: {
       fontFamily: {
         sans: [
-          "Inter",
-          "ui-sans-serif",
-          "system-ui",
-          "sans-serif",
-          "Apple Color Emoji",
-          "Segoe UI Emoji",
-          "Segoe UI Symbol",
-          "Noto Color Emoji",
+          'Ubuntu', 
+          'Ubuntu Mono', 
+          'system-ui', 
+          '-apple-system', 
+          'BlinkMacSystemFont', 
+          'Segoe UI', 
+          'Roboto', 
+          'Helvetica Neue', 
+          'Arial', 
+          'sans-serif'
         ],
       },
+      colors: {
+        dark: {
+          background: '#121212',
+          text: '#ffffff',
+          primary: '#3b82f6',
+          secondary: '#6b7280',
+        },
+      },
+      transitionProperty: {
+        'colors': 'color, background-color, border-color, text-decoration-color, fill, stroke',
+      },
+      boxShadow: {
+        'header': '0 2px 4px rgba(0, 0, 0, 0.1)',
+      }
     },
   },
-  plugins: [],
-} satisfies Config;
+  plugins: [
+    typography
+  ],
+} satisfies Config
